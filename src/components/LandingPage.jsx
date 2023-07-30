@@ -43,9 +43,9 @@ function LandingPage() {
             <img src={MobileHeroImg} alt="" />
         </section>
 
-        <section className='text-center mt-4'>
-            <p className='font-bold text-3xl'>Make remote work</p>
-            <p className='text-sm w-[260px] m-auto mt-4'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+        <section className='text-center mt-6'>
+            <p className='font-bold text-4xl'>Make remote work</p>
+            <p className='w-[300px] m-auto mt-4'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
             <button className='bg-black text-white py-2 px-4 rounded-lg mt-4'>Learn more</button>
         </section>
 
@@ -60,7 +60,7 @@ function LandingPage() {
 
        <div id='mobile-menu' className='absolute h-[100vh] w-[70%] top-0 left-[30%] bg-red-100 hidden'>
                 <div onClick={closeMenu}>
-                    <img className='p-4 ml-[205px]' src={MenuCloseIcon} id='menu-close-icon' alt="menu close icon" />
+                    <img className='p-4 ml-[80%]' src={MenuCloseIcon} id='menu-close-icon' alt="menu close icon" />
                 </div>
         </div>
 
