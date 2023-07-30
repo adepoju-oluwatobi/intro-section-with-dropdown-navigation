@@ -126,7 +126,7 @@ function LandingPage() {
         </section>
 
         <section className='text-center mt-6'>
-            <p className='font-bold text-4xl px-4'>Make remote work</p>
+            <p className='font-bold text-3xl px-4'>Make remote work</p>
             <p className='w-[300px] text-sm m-auto mt-4'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
             <button className='bg-black text-white py-2 px-4 rounded-lg mt-4'>Learn more</button>
         </section>
