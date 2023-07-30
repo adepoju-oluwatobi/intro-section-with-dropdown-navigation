@@ -7,6 +7,10 @@ import Client2 from '../assets/images/client-databiz.svg'
 import Client3 from '../assets/images/client-maker.svg'
 import Client4 from '../assets/images/client-meet.svg'
 import ArrDown from '../assets/images/icon-arrow-down.svg'
+import TodoIcon from '../assets/images/icon-todo.svg'
+import CalenderIcon from '../assets/images/icon-calendar.svg'
+import ReminderIcon from '../assets/images/icon-reminders.svg'
+import PlanningIcon from '../assets/images/icon-planning.svg'
 
 function LandingPage() {
     let menuOpenIcon = document.getElementById('menu-open');
@@ -65,10 +69,33 @@ function LandingPage() {
                 </div>
 
                 <div className='p-4 ml-2'>
-                        <div className='flex items-center gap-4 mb-4'>
+                       <div>
+                         <div className='flex items-center gap-4 mb-4'>
                             <p>Features</p>
                             <img src={ArrDown} alt="down arrow" />
                         </div>
+
+                    <div className='ml-6 flex flex-col gap-2 mb-4'>
+                         <div className='flex items-center gap-4'>
+                            <img src={TodoIcon} alt="" />
+                            <p>Todo List</p>
+                        </div>
+                         <div className='flex items-center gap-4'>
+                            <img src={CalenderIcon} alt="" />
+                            <p>Calendar</p>
+                        </div>
+                         <div className='flex items-center gap-4'>
+                            <img src={ReminderIcon} alt="" />
+                            <p>Reminders</p>
+                        </div>
+                         <div className='flex items-center gap-4'>
+                            <img src={PlanningIcon} alt="" />
+                            <p>Planning</p>
+                        </div>
+
+                    </div>
+                       </div>
+
                         <div className='flex items-center gap-4 mb-4'>
                             <p>Company</p>
                             <img src={ArrDown} alt="down arrow" />
