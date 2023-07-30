@@ -7,6 +7,7 @@ import Client2 from '../assets/images/client-databiz.svg'
 import Client3 from '../assets/images/client-maker.svg'
 import Client4 from '../assets/images/client-meet.svg'
 import ArrDown from '../assets/images/icon-arrow-down.svg'
+import ArrUp from '../assets/images/icon-arrow-up.svg'
 import TodoIcon from '../assets/images/icon-todo.svg'
 import CalenderIcon from '../assets/images/icon-calendar.svg'
 import ReminderIcon from '../assets/images/icon-reminders.svg'
@@ -17,6 +18,12 @@ function LandingPage() {
     let menuCloseIcon = document.getElementById('menu-close-icon')
     let mobileMenu = document.getElementById('mobile-menu');
     let overlay = document.getElementById('overlay')
+    let featureOpenIcon = document.getElementById('feature-open-icon');
+    let featureCloseIcon = document.getElementById('feature-close-icon');
+    let featureSubMenu = document.getElementById('feature-sub-menu');
+    let companyOpenIcon = document.getElementById('company-open-icon');
+    let companyCloseIcon = document.getElementById('company-close-icon');
+    let companySubMenu = document.getElementById('company-sub-menu');
 
     function openMenu()
     {
@@ -34,6 +41,35 @@ function LandingPage() {
         mobileMenu = document.getElementById('mobile-menu').style.display = "none"
         overlay = document.getElementById('overlay').style.display = "none"
     }
+
+    function openFeatureSub()
+    {
+        featureSubMenu = document.getElementById('features-sub-menu').style.display = "flex"
+        featureOpenIcon = document.getElementById('feature-open-icon').style.display = "none"
+        featureCloseIcon = document.getElementById('feature-close-icon').style.display = "block"
+    }
+
+    function closeFeatureSub()
+    {
+        featureSubMenu = document.getElementById('features-sub-menu').style.display = "none"
+        featureOpenIcon = document.getElementById('feature-open-icon').style.display = "block"
+        featureCloseIcon = document.getElementById('feature-close-icon').style.display = "none"
+
+    }
+
+    function companyMenuOpen()
+    {
+        companyOpenIcon = document.getElementById('company-open-icon').style.display = "none"
+        companyCloseIcon = document.getElementById('company-close-icon').style.display = "block";
+        companySubMenu = document.getElementById('company-sub-menu').style.display = "flex"
+    }
+
+    function companyMenuClose()
+    {
+        companyOpenIcon = document.getElementById('company-open-icon').style.display = "block"
+        companyCloseIcon = document.getElementById('company-close-icon').style.display = "none";
+        companySubMenu = document.getElementById('company-sub-menu').style.display = "none"
+    }
   return (
     <div className=''>
         <div id='overlay' className='overlay hidden'></div>
@@ -50,11 +86,11 @@ function LandingPage() {
 
         <section className='text-center mt-6'>
             <p className='font-bold text-4xl'>Make remote work</p>
-            <p className='w-[300px] m-auto mt-4'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+            <p className='w-[300px] text-sm m-auto mt-4'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
             <button className='bg-black text-white py-2 px-4 rounded-lg mt-4'>Learn more</button>
         </section>
 
-        <section className='flex justify-evenly items-center mt-8'>
+        <section className='flex justify-evenly items-center mt-8 pb-4'>
             <img className='w-12' src={Client2} alt="" />
             <img className='w-12' src={Client1} alt="" />
             <img className='w-12' src={Client4} alt="" />
@@ -71,11 +107,16 @@ function LandingPage() {
                 <div className='p-4 ml-2'>
                        <div>
                          <div className='flex items-center gap-4 mb-4'>
-                            <p>Features</p>
-                            <img src={ArrDown} alt="down arrow" />
+                            <p className=''>Features</p>
+                           <div  onClick={openFeatureSub}>
+                             <img src={ArrDown} alt="down arrow" id='feature-open-icon' />
+                           </div>
+                            <div onClick={closeFeatureSub} className='-ml-4'>
+                                <img className='hidden' src={ArrUp} alt="Arrow up" id='feature-close-icon'/>
+                            </div>
                         </div>
 
-                    <div className='ml-6 flex flex-col gap-2 mb-4'>
+                    <div className='ml-6 flex-col gap-2 mb-4 hidden' id='features-sub-menu'>
                          <div className='flex items-center gap-4'>
                             <img src={TodoIcon} alt="" />
                             <p>Todo List</p>
@@ -97,11 +138,22 @@ function LandingPage() {
                        </div>
 
                         <div className='flex items-center gap-4 mb-4'>
-                            <p>Company</p>
-                            <img src={ArrDown} alt="down arrow" />
+                            <p className=''>Company</p>
+                           <div onClick={companyMenuOpen}>
+                             <img src={ArrDown} alt="down arrow" id='company-open-icon'
+                             />
+                           </div>
+                           <div className='-ml-4' onClick={companyMenuClose}>
+                             <img className='hidden' src={ArrUp} alt="down arrow" id='company-close-icon'/>
+                           </div>
                         </div>
-                            <p className='mb-4'>Career</p>
-                            <p>About</p>
+                        <div className='ml-6 flex-col gap-2 mb-4 hidden' id='company-sub-menu'>
+                                <p>History</p>
+                                <p>Our Team</p>
+                                <p>Blog</p>
+                        </div>
+                        <p className='mb-4'>Careers</p>
+                        <p>About</p>
                 </div>
 
                 <div className='text-center'>
