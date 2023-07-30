@@ -173,9 +173,9 @@ function LandingPage() {
 
 {/** --------------Desktop view----------------- */}
 <div className='hidden md:block'>
-    <header className='flex items-center justify-between p-4'>
+    <header className='flex items-center justify-between p-6'>
        <div className='flex items-center gap-10'>
-         <p className='font-bold text-4xl'>Snap</p>
+         <p className='font-bold text-3xl'>Snap</p>
         <div className='flex items-center gap-6'>
             <div className='flex items-center gap-2 cursor-pointer'>
                 <p>Features</p>
@@ -210,7 +210,7 @@ function LandingPage() {
         <div className=''>
        <div>
         <div className='leading-10'>
-         <p className='text-[70px] font-bold mt-[80px]'>Make</p>
+         <p className='text-[70px] font-bold mt-[120px]'>Make</p>
         <p className='text-7xl font-bold'>remote work</p>
        </div>
        <div className='w-[400px] mt-6'>
