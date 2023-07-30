@@ -215,7 +215,7 @@ function LandingPage() {
        <div className='flex items-center gap-10'>
          <p className='font-bold text-3xl'>Snap</p>
         <div className='flex items-center gap-6'>
-            <div className='flex items-center gap-2 cursor-pointer opacity-50 hover:opacity-100'>
+            <div className='flex items-center gap-2 cursor-pointer opacity-50 hover:opacity-100 transition-all duration-500'>
                 <p className=''>Features</p>
                 <div onClick={desktopOpenFeatureSub} className=''>
                     <img src={ArrDownDesk} alt="" id='desktop-feature-open-icon'/>
@@ -224,7 +224,7 @@ function LandingPage() {
                     <img className='hidden' src={ArrUpDesk} alt="Arrow up" id='desktop-feature-close-icon'/>
                 </div>
            </div>
-           <div className='absolute ml-6 flex-col gap-2 top-[12%] left-[5%] bg-white p-4 rounded-lg hidden' id='desktop-features-sub-menu'>
+           <div className='absolute ml-6 flex-col gap-2 top-[12%] left-[5%] bg-white p-4 rounded-lg hidden shadow-lg' id='desktop-features-sub-menu'>
                          <div className='flex items-center gap-4'>
                             <img src={TodoIcon} alt="" />
                             <p>Todo List</p>
@@ -245,7 +245,7 @@ function LandingPage() {
                     </div>
 
 
-            <div className='flex items-center gap-2 cursor-pointer opacity-50 hover:opacity-100'>
+            <div className='flex items-center gap-2 cursor-pointer opacity-50 hover:opacity-100 transition-all duration-500'>
                 <p>Company</p>
                 <div onClick={desktopCompanyMenuOpen} className=''>
                     <img src={ArrDownDesk} alt="" id='desktop-company-open-icon'/>
@@ -254,21 +254,21 @@ function LandingPage() {
                     <img className='hidden' src={ArrUpDesk} alt="down arrow" id='desktop-company-close-icon'/>
                 </div>
             </div>
-             <div className='absolute ml-6 flex-col gap-2 top-[12%] left-[18%] bg-white p-4 rounded-lg hidden' id='desktop-company-sub-menu'>
+             <div className='absolute ml-6 flex-col gap-2 top-[12%] left-[18%] bg-white p-4 rounded-lg hidden shadow-lg' id='desktop-company-sub-menu'>
                 <p>History</p>
                 <p>Our Team</p>
                 <p>Blog</p>
                         </div>
-            <p className='opacity-50 hover:opacity-100 cursor-pointer'>Careers</p>
-            <p className='opacity-50 hover:opacity-100 cursor-pointer'>About</p>
+            <p className='opacity-50 hover:opacity-100 cursor-pointer transition-all duration-500'>Careers</p>
+            <p className='opacity-50 hover:opacity-100 cursor-pointer transition-all duration-500'>About</p>
         </div>
        </div>
         <div className='flex items-center gap-10 '>
-            <div className='opacity-50 hover:opacity-100 cursor-pointer'>
+            <div className='opacity-50 hover:opacity-100 cursor-pointer transition-all duration-500'>
             <p>Login</p>
         </div>
         <div className='opacity-50 hover:opacity-100 hover:bg-black hover:text-white rounded-xl'>
-            <button className='border border-black py-2 px-4 rounded-xl'>Register</button>
+            <button className='border border-black py-2 px-4 rounded-xl transition-all duration-200'>Register</button>
         </div>
         </div>
     </header>
@@ -283,7 +283,7 @@ function LandingPage() {
        <div className='w-[400px] mt-6'>
             <p className='opacity-70'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
        </div>
-       <button className='bg-black hover:border hover:border-black hover:bg-opacity-0 hover:text-black text-white py-2 px-4 rounded-xl mt-6'>Learn More</button>
+       <button className='bg-black hover:border hover:border-black hover:bg-opacity-0 hover:text-black text-white py-2 px-4 rounded-xl mt-6 transition-all duration-500'>Learn More</button>
        <section className='flex items-center gap-6 mt-10 pb-4'>
             <img className='w-12' src={Client2} alt="" />
             <img className='w-12' src={Client1} alt="" />
