@@ -17,5 +17,6 @@
 @layer base{
     body{
         font-family: 'Epilogue', sans-serif;
+        background: hsl(0, 0%, 95%);
     }
 }
