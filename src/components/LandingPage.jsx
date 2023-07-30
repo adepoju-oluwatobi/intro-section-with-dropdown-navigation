@@ -60,7 +60,7 @@ function LandingPage() {
 
        <div id='mobile-menu' className='absolute h-[100vh] w-[70%] top-0 left-[30%] bg-red-100 hidden'>
                 <div onClick={closeMenu}>
-                    <img className='p-4 ml-[170px]' src={MenuCloseIcon} id='menu-close-icon' alt="menu close icon" />
+                    <img className='p-4 ml-[205px]' src={MenuCloseIcon} id='menu-close-icon' alt="menu close icon" />
                 </div>
         </div>
 
