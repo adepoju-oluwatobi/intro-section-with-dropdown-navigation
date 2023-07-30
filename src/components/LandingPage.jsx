@@ -2,6 +2,7 @@ import React from 'react'
 import MenuOpenIcon from '../assets/images/icon-menu.svg';
 import MenuCloseIcon from '../assets/images/icon-close-menu.svg';
 import MobileHeroImg from '../assets/images/image-hero-mobile.png';
+import DesktopHeroIcon from '../assets/images/image-hero-desktop.png/'
 import Client1 from '../assets/images/client-audiophile.svg'
 import Client2 from '../assets/images/client-databiz.svg'
 import Client3 from '../assets/images/client-maker.svg'
@@ -72,6 +73,8 @@ function LandingPage() {
     }
   return (
     <div className=''>
+        {/** Mobile view */}
+        <div className='md:hidden'>
         <div id='overlay' className='overlay hidden'></div>
          <header className='flex justify-between items-center p-2'>
             <p className='font-bold text-3xl'>Snap</p>
@@ -85,7 +88,7 @@ function LandingPage() {
         </section>
 
         <section className='text-center mt-6'>
-            <p className='font-bold text-4xl'>Make remote work</p>
+            <p className='font-bold text-4xl px-4'>Make remote work</p>
             <p className='w-[300px] text-sm m-auto mt-4'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
             <button className='bg-black text-white py-2 px-4 rounded-lg mt-4'>Learn more</button>
         </section>
@@ -165,7 +168,69 @@ function LandingPage() {
                     </div>
                 </div>
         </div>
+    </div>
+{/** --------------End of mobile view----------- */}
 
+{/** --------------Desktop view----------------- */}
+<div className='hidden md:block'>
+    <header className='flex items-center justify-between p-4'>
+       <div className='flex items-center gap-10'>
+         <p className='font-bold text-4xl'>Snap</p>
+        <div className='flex items-center gap-6'>
+            <div className='flex items-center gap-2 cursor-pointer'>
+                <p>Features</p>
+                <div onClick={openFeatureSub} className=''>
+                    <img src={ArrDown} alt="" id='feature-open-icon'/>
+                </div>
+                <div onClick={closeFeatureSub} className='-ml-4'>
+                    <img className='hidden' src={ArrUp} alt="Arrow up" id='feature-close-icon'/>
+                </div>
+           </div>
+
+
+            <div className='flex items-center gap-2 cursor-pointer'>
+                <p>Company</p>
+                <img src={ArrDown} alt="" />
+            </div>
+            <p>Careers</p>
+            <p>About</p>
+        </div>
+       </div>
+        <div className='flex items-center gap-10'>
+            <div>
+            <p>Login</p>
+        </div>
+        <div>
+            <button className='border border-black py-2 px-4 rounded-xl'>Register</button>
+        </div>
+        </div>
+    </header>
+
+    <section className='w-[100%] h-[100%] p-[20px] flex justify-center'>
+        <div className='w-[50%]'>
+       <div>
+        <div className='leading-10'>
+         <p className='text-[70px] font-bold mt-[80px]'>Make</p>
+        <p className='text-7xl font-bold'>remote work</p>
+       </div>
+       <div className='w-[400px] mt-6'>
+            <p className='opacity-70'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+       </div>
+       <button className='bg-black text-white py-2 px-4 rounded-xl mt-6'>Learn More</button>
+       <section className='flex items-center gap-6 mt-10 pb-4'>
+            <img className='w-12' src={Client2} alt="" />
+            <img className='w-12' src={Client1} alt="" />
+            <img className='w-12' src={Client4} alt="" />
+            <img className='w-12' src={Client3} alt="" />
+        </section>
+       </div>
+        </div>
+        <div className='w-[30%]'>
+            <img className='h-[80vh]' src={DesktopHeroIcon} alt="" />
+        </div>
+    </section>
+</div>
+{/** ------------End of Desktop view------------ */}
     </div>
   )
 }
