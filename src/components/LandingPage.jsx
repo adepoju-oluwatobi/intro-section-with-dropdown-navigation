@@ -6,6 +6,7 @@ import Client1 from '../assets/images/client-audiophile.svg'
 import Client2 from '../assets/images/client-databiz.svg'
 import Client3 from '../assets/images/client-maker.svg'
 import Client4 from '../assets/images/client-meet.svg'
+import ArrDown from '../assets/images/icon-arrow-down.svg'
 
 function LandingPage() {
     let menuOpenIcon = document.getElementById('menu-open');
@@ -58,9 +59,31 @@ function LandingPage() {
 
         {/***--------------------------- */}
 
-       <div id='mobile-menu' className='absolute h-[100vh] w-[70%] top-0 left-[30%] bg-red-100 hidden'>
+       <div id='mobile-menu' className='absolute h-[100vh] w-[70%] top-0 left-[30%] bg-white hidden'>
                 <div onClick={closeMenu}>
-                    <img className='p-4 ml-[80%]' src={MenuCloseIcon} id='menu-close-icon' alt="menu close icon" />
+                    <img className='p-4 ml-[75%]' src={MenuCloseIcon} id='menu-close-icon' alt="menu close icon" />
+                </div>
+
+                <div className='p-4 ml-2'>
+                        <div className='flex items-center gap-4 mb-4'>
+                            <p>Features</p>
+                            <img src={ArrDown} alt="down arrow" />
+                        </div>
+                        <div className='flex items-center gap-4 mb-4'>
+                            <p>Company</p>
+                            <img src={ArrDown} alt="down arrow" />
+                        </div>
+                            <p className='mb-4'>Career</p>
+                            <p>About</p>
+                </div>
+
+                <div className='text-center'>
+                    <div className='my-4'>
+                        <p>Login</p>
+                    </div>
+                    <div>
+                        <button className='border border-black p-2 px-10 rounded-xl'>Register</button>
+                    </div>
                 </div>
         </div>
 
