@@ -8,7 +8,9 @@ import Client2 from '../assets/images/client-databiz.svg'
 import Client3 from '../assets/images/client-maker.svg'
 import Client4 from '../assets/images/client-meet.svg'
 import ArrDown from '../assets/images/icon-arrow-down.svg'
+import ArrDownDesk from '../assets/images/icon-arrow-down.svg'
 import ArrUp from '../assets/images/icon-arrow-up.svg'
+import ArrUpDesk from '../assets/images/icon-arrow-up.svg'
 import TodoIcon from '../assets/images/icon-todo.svg'
 import CalenderIcon from '../assets/images/icon-calendar.svg'
 import ReminderIcon from '../assets/images/icon-reminders.svg'
@@ -25,6 +27,13 @@ function LandingPage() {
     let companyOpenIcon = document.getElementById('company-open-icon');
     let companyCloseIcon = document.getElementById('company-close-icon');
     let companySubMenu = document.getElementById('company-sub-menu');
+
+    let desktopFeatureOpenIcon = document.getElementById('desktop-feature-open-icon');
+    let desktopFeatureCloseIcon = document.getElementById('desktop-feature-close-icon');
+    let desktopFeatureSubMenu = document.getElementById('desktop-feature-sub-menu');
+    let desktopCompanyOpenIcon = document.getElementById('desktop-company-open-icon');
+    let desktopCompanyCloseIcon = document.getElementById('desktop-company-close-icon');
+    let desktopCompanySubMenu = document.getElementById('desktop-company-sub-menu');
 
     function openMenu()
     {
@@ -50,12 +59,26 @@ function LandingPage() {
         featureCloseIcon = document.getElementById('feature-close-icon').style.display = "block"
     }
 
+    function desktopOpenFeatureSub()
+    {
+        desktopFeatureSubMenu = document.getElementById('desktop-features-sub-menu').style.display = "flex"
+        desktopFeatureOpenIcon = document.getElementById('desktop-feature-open-icon').style.display = "none"
+        desktopFeatureCloseIcon = document.getElementById('desktop-feature-close-icon').style.display = "block"
+    }
+
     function closeFeatureSub()
     {
         featureSubMenu = document.getElementById('features-sub-menu').style.display = "none"
         featureOpenIcon = document.getElementById('feature-open-icon').style.display = "block"
         featureCloseIcon = document.getElementById('feature-close-icon').style.display = "none"
 
+    }
+
+    function desktopCloseFeatureSub()
+    {
+        desktopFeatureSubMenu = document.getElementById('desktop-features-sub-menu').style.display = "none"
+        desktopFeatureOpenIcon = document.getElementById('desktop-feature-open-icon').style.display = "block"
+        desktopFeatureCloseIcon = document.getElementById('desktop-feature-close-icon').style.display = "none"
     }
 
     function companyMenuOpen()
@@ -65,11 +88,26 @@ function LandingPage() {
         companySubMenu = document.getElementById('company-sub-menu').style.display = "flex"
     }
 
+    function desktopCompanyMenuOpen()
+    {
+        desktopCompanyOpenIcon = document.getElementById('desktop-company-open-icon').style.display = "none"
+        desktopCompanyCloseIcon = document.getElementById('desktop-company-close-icon').style.display = "block";
+        desktopCompanySubMenu = document.getElementById('desktop-company-sub-menu').style.display = "flex"
+    }
+
+    
     function companyMenuClose()
     {
         companyOpenIcon = document.getElementById('company-open-icon').style.display = "block"
         companyCloseIcon = document.getElementById('company-close-icon').style.display = "none";
         companySubMenu = document.getElementById('company-sub-menu').style.display = "none"
+    }
+
+    function desktopCompanyMenuClose()
+    {
+        desktopCompanyOpenIcon = document.getElementById('desktop-company-open-icon').style.display = "block"
+        desktopCompanyCloseIcon = document.getElementById('desktop-company-close-icon').style.display = "none";
+        desktopCompanySubMenu = document.getElementById('desktop-company-sub-menu').style.display = "none"
     }
   return (
     <div className=''>
@@ -177,30 +215,59 @@ function LandingPage() {
        <div className='flex items-center gap-10'>
          <p className='font-bold text-3xl'>Snap</p>
         <div className='flex items-center gap-6'>
-            <div className='flex items-center gap-2 cursor-pointer'>
-                <p>Features</p>
-                <div onClick={openFeatureSub} className=''>
-                    <img src={ArrDown} alt="" id='feature-open-icon'/>
+            <div className='flex items-center gap-2 cursor-pointer opacity-50 hover:opacity-100'>
+                <p className=''>Features</p>
+                <div onClick={desktopOpenFeatureSub} className=''>
+                    <img src={ArrDownDesk} alt="" id='desktop-feature-open-icon'/>
                 </div>
-                <div onClick={closeFeatureSub} className='-ml-4'>
-                    <img className='hidden' src={ArrUp} alt="Arrow up" id='feature-close-icon'/>
+                <div onClick={desktopCloseFeatureSub} className='-ml-2'>
+                    <img className='hidden' src={ArrUpDesk} alt="Arrow up" id='desktop-feature-close-icon'/>
                 </div>
            </div>
+           <div className='absolute ml-6 flex-col gap-2 top-[12%] left-[5%] bg-white p-4 rounded-lg hidden' id='desktop-features-sub-menu'>
+                         <div className='flex items-center gap-4'>
+                            <img src={TodoIcon} alt="" />
+                            <p>Todo List</p>
+                        </div>
+                         <div className='flex items-center gap-4'>
+                            <img src={CalenderIcon} alt="" />
+                            <p>Calendar</p>
+                        </div>
+                         <div className='flex items-center gap-4'>
+                            <img src={ReminderIcon} alt="" />
+                            <p>Reminders</p>
+                        </div>
+                         <div className='flex items-center gap-4'>
+                            <img src={PlanningIcon} alt="" />
+                            <p>Planning</p>
+                        </div>
+
+                    </div>
 
 
-            <div className='flex items-center gap-2 cursor-pointer'>
+            <div className='flex items-center gap-2 cursor-pointer opacity-50 hover:opacity-100'>
                 <p>Company</p>
-                <img src={ArrDown} alt="" />
+                <div onClick={desktopCompanyMenuOpen} className=''>
+                    <img src={ArrDownDesk} alt="" id='desktop-company-open-icon'/>
+                </div>
+                <div className='-ml-2' onClick={desktopCompanyMenuClose}>
+                    <img className='hidden' src={ArrUpDesk} alt="down arrow" id='desktop-company-close-icon'/>
+                </div>
             </div>
-            <p>Careers</p>
-            <p>About</p>
+             <div className='absolute ml-6 flex-col gap-2 top-[12%] left-[18%] bg-white p-4 rounded-lg hidden' id='desktop-company-sub-menu'>
+                <p>History</p>
+                <p>Our Team</p>
+                <p>Blog</p>
+                        </div>
+            <p className='opacity-50 hover:opacity-100 cursor-pointer'>Careers</p>
+            <p className='opacity-50 hover:opacity-100 cursor-pointer'>About</p>
         </div>
        </div>
-        <div className='flex items-center gap-10'>
-            <div>
+        <div className='flex items-center gap-10 '>
+            <div className='opacity-50 hover:opacity-100 cursor-pointer'>
             <p>Login</p>
         </div>
-        <div>
+        <div className='opacity-50 hover:opacity-100 hover:bg-black hover:text-white rounded-xl'>
             <button className='border border-black py-2 px-4 rounded-xl'>Register</button>
         </div>
         </div>
@@ -210,13 +277,13 @@ function LandingPage() {
         <div className=''>
        <div>
         <div className='leading-10'>
-         <p className='text-[70px] font-bold mt-[120px]'>Make</p>
+         <p className='text-[70px] font-bold mt-[90px]'>Make</p>
         <p className='text-7xl font-bold'>remote work</p>
        </div>
        <div className='w-[400px] mt-6'>
             <p className='opacity-70'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
        </div>
-       <button className='bg-black text-white py-2 px-4 rounded-xl mt-6'>Learn More</button>
+       <button className='bg-black hover:border hover:border-black hover:bg-opacity-0 hover:text-black text-white py-2 px-4 rounded-xl mt-6'>Learn More</button>
        <section className='flex items-center gap-6 mt-10 pb-4'>
             <img className='w-12' src={Client2} alt="" />
             <img className='w-12' src={Client1} alt="" />
