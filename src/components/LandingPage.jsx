@@ -206,8 +206,8 @@ function LandingPage() {
         </div>
     </header>
 
-    <section className='w-[100%] h-[100%] p-[20px] flex justify-center'>
-        <div className='w-[50%]'>
+    <section className='w-[100%] h-[100%] p-[20px] flex justify-center gap-[120px]'>
+        <div className=''>
        <div>
         <div className='leading-10'>
          <p className='text-[70px] font-bold mt-[80px]'>Make</p>
@@ -225,8 +225,8 @@ function LandingPage() {
         </section>
        </div>
         </div>
-        <div className='w-[30%]'>
-            <img className='h-[80vh]' src={DesktopHeroIcon} alt="" />
+        <div className=''>
+            <img className='h-[80vh] w-[100%]' src={DesktopHeroIcon} alt="" />
         </div>
     </section>
 </div>
